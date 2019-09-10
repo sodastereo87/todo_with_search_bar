@@ -18,5 +18,5 @@ body{
     cursor: pointer;
   }
   .filtered{
-    display: none;
+    display: none !important;
   }

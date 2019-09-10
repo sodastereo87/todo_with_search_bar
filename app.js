@@ -36,20 +36,27 @@ list.addEventListener('click', e => {
 });
 
 // search bar function
-const filterTodo = (term) => {
+const filterTodos = (term) => {
 
-    Array.from(list.children)
-        .filter((todo) => !todo.textContent.toLowerCase().includes(term))
+    // Array.from(list.children)
+    //     .filter((todo) => !todo.textContent.toLowerCase().includes(term))
+    //     .forEach((todo) => todo.classList.add('filtered'));
+    
+    // Array.from(list.children)
+    //     .filter((todo) => todo.textContent.toLowerCase().includes(term))
+    //     .forEach((todo) => todo.classList.remove('filtered'));
+        Array.from(list.children)
+        .filter((todo) => !todo.textContent.includes(term))
         .forEach((todo) => todo.classList.add('filtered'));
-
-    Array.from(list.children)
-        .filter((todo) => todo.textContent.toLowerCase().includes(term))
+           
+        Array.from(list.children)
+        .filter((todo) => todo.textContent.includes(term))
         .forEach((todo) => todo.classList.remove('filtered'));
-        console.log(todo);  
+        
 };
 
 // keyup event
 search.addEventListener('keyup', () => {
     const term = search.value.trim().toLowerCase();
-    filterTodo(term);
+    filterTodos(term);
 });
